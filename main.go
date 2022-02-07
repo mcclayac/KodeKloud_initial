@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"strconv"
 )
+
+const PI = 3.14
 
 func main() {
 
@@ -18,6 +21,26 @@ func main() {
 	scanfFunction()
 	findTheVariableType()
 	convertingDataTypes()
+	constantVariables()
+
+}
+
+func constantVariables() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("Constant variables\n")
+
+	const name = "Harry Potter"
+	const is_muggle = false
+	const age = 14
+
+	fmt.Printf("name %v: %T\n", name, name)
+	fmt.Printf("is a muggle %v: %T\n", is_muggle, is_muggle)
+	fmt.Printf("age: %v: %T\n\n", age, age)
+
+	var radius float64 = 5.0
+	var area float64
+	area = PI * radius * radius
+	fmt.Printf("area = %.2f\n\n", area)
 
 }
 
@@ -34,6 +57,24 @@ func convertingDataTypes() {
 	var f2 float64 = 54.89
 	var i2 int = int(f2)
 	fmt.Printf("%v\n", i2)
+
+	fmt.Println("strconv Package")
+	var i3 int = 42
+	var s string = strconv.Itoa(i3) // convert integer to string
+	fmt.Printf("%q", s)
+
+	fmt.Println("\n------------\n")
+	fmt.Println(" strconv string to integer")
+
+	var s4 string = "200"
+	i, err := strconv.Atoi(s4)
+	fmt.Printf(" i %v, %T \n", i, i)
+	fmt.Printf("err : %v, %T\n\n", err, err)
+
+	s4 = "200abc"
+	i, err = strconv.Atoi(s4)
+	fmt.Printf(" i %v, %T \n", i, i)
+	fmt.Printf("err : %v, %T", err, err)
 
 }
 
