@@ -10,7 +10,52 @@ const PI = 3.14
 
 func main() {
 
-	fmt.Println("These Nutzs")
+	// Chapter 1
+	// dataTypesAndVariables()
+
+	//Chapter2
+	operatorsAndControlFlow()
+
+}
+
+func operatorsAndControlFlow() {
+	fmt.Println("Chapter 2")
+	fmt.Println("\n\n Operators and Control Flow")
+
+	// Comparison Operators
+	comparisonOperator()
+
+}
+
+func comparisonOperator() {
+
+	var (
+		city_1 string = "Harvey"
+		city_2 string = "Markham"
+	)
+	var a, b int = 5, 10
+	var c, d int = 10, 10
+	var e, f int = 20, 10
+	var g, h int = 20, 20
+
+	fmt.Println("city_1 == city_2 = ", city_1 == city_2)
+
+	fmt.Println("city_1 != city_2 = ", city_1 != city_2)
+
+	fmt.Printf("a(%d) < b(%d) = %t \n", a, b, a < b)
+
+	fmt.Printf("c(%d) <= d(%d) = %t \n", c, d, c <= d)
+
+	fmt.Printf("e(%d) > f(%d) = %t \n", e, f, e > f)
+
+	fmt.Printf("g(%d) >= h(%d) = %t \n", g, h, g >= h)
+
+}
+
+func dataTypesAndVariables() {
+
+	fmt.Println("Chapter 1")
+	fmt.Println("\n\n Data Types and Variables")
 
 	dataTypes()
 	printVariables()
