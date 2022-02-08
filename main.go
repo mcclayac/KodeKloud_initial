@@ -26,6 +26,36 @@ func operatorsAndControlFlow() {
 	comparisonOperator()
 	arithmeticOperators()
 	logicalOperators()
+	assignmentOperators()
+
+}
+
+func assignmentOperators() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("assignmentOperators\n")
+
+	var x int = 10
+	var y int
+	y = x
+	var multiline string
+	multiline = `var x int = 10
+var y int
+y = x`
+	fmt.Println(multiline)
+	fmt.Printf("y = x, y = %v\n", y)
+	multiline = `
+	x = 10
+	y = 20
+	x += y // x = x + y `
+	x = 10
+	y = 20
+	x += y // x = x + y
+	fmt.Println(multiline)
+	fmt.Printf("x += y = %d", x)
+
+	x = 10
+	y = 20
+	x -= y // x = x - y
 
 }
 
