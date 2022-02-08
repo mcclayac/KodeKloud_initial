@@ -25,6 +25,32 @@ func operatorsAndControlFlow() {
 	// Comparison Operators
 	comparisonOperator()
 	arithmeticOperators()
+	logicalOperators()
+
+}
+
+func logicalOperators() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("logicalOperators\n")
+
+	fmt.Println("And && Operator\n")
+	var x int = 10
+	fmt.Println("var x int = 10")
+	fmt.Printf("(x < 100) && (x < 200)=%v\n", (x < 100) && (x < 200))
+	fmt.Printf("(x < 300) && (x < 0)=%v\n\n", (x < 300) && (x < 0))
+
+	fmt.Println("Or || Operator\n")
+	var y int = 10
+	fmt.Println("var y int = 10")
+	fmt.Printf("(y < 0) || (y < 200)=%v\n", (y < 0) || (y < 200))
+	fmt.Printf("(y < 0) || (y > 200)=%v\n\n", (y < 0) || (y > 200))
+
+	fmt.Println("NOT ! Operator\n")
+	var a, b int = 10, 20
+	fmt.Println("var a, b int = 10, 20")
+	fmt.Printf("!(a  > b) = %v\n", !(a > b))
+	fmt.Printf("!(true) = %v\n", !(true))
+	fmt.Printf("!(false) = %v\n\n", !(false))
 
 }
 
