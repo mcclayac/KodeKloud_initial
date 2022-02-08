@@ -24,10 +24,43 @@ func operatorsAndControlFlow() {
 
 	// Comparison Operators
 	comparisonOperator()
+	arithmeticOperators()
+
+}
+
+func arithmeticOperators() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("arithmeticOperators\n")
+
+	var a, b string = "foo", "bar"
+	fmt.Printf("a + b = %s\n", a+b)
+
+	var c, d float64 = 79.02, 75.66
+	fmt.Printf("c - d = %.2f\n", c-d)
+
+	var e, f int = 12, 2
+	fmt.Printf("e * f = %d\n", e*f)
+
+	var g, h int = 24, 2
+	fmt.Printf("g / h = %d\n", g/h)
+
+	var i, j int = 24, 7
+	fmt.Println("i % j =", (i % j))
+	fmt.Println(i % j)
+
+	var k int = 1
+	k++
+	fmt.Printf("k++ = %d\n", k)
+
+	var l int = 1
+	l--
+	fmt.Printf("l++ = %d\n", l)
 
 }
 
 func comparisonOperator() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("comparisonOperator\n")
 
 	var (
 		city_1 string = "Harvey"
