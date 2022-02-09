@@ -27,6 +27,13 @@ func operatorsAndControlFlow() {
 	arithmeticOperators()
 	logicalOperators()
 	assignmentOperators()
+	bitwiseOperators()
+
+}
+
+func bitwiseOperators() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("bitwiseOperators\n")
 
 }
 
