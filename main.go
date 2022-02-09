@@ -44,6 +44,7 @@ y = x`
 	fmt.Println(multiline)
 	fmt.Printf("y = x, y = %v\n", y)
 	multiline = `
+// add and assign
 	x = 10
 	y = 20
 	x += y // x = x + y `
@@ -51,11 +52,53 @@ y = x`
 	y = 20
 	x += y // x = x + y
 	fmt.Println(multiline)
-	fmt.Printf("x += y = %d", x)
+	fmt.Printf("x += y = %d", x, x)
 
 	x = 10
 	y = 20
 	x -= y // x = x - y
+	multiline = `
+// subtract and assign
+    x = 10
+	y = 20
+	x -= y // x = x - y
+`
+	fmt.Println(multiline)
+	fmt.Printf("x -= y // x = x - y = %d\n\n", x)
+
+	x = 10
+	y = 20
+	x *= y
+	multiline = `
+// multiply and assign
+	x = 10
+	y = 20
+	x *= y 
+`
+	fmt.Println(multiline)
+	fmt.Printf("x *= y = %d\n\n", x)
+
+	x = 200
+	y = 20
+	x /= y
+	multiline = `
+\\ devide and assign
+	x = 200
+	y = 20
+	x /= y
+`
+	fmt.Println(multiline)
+	fmt.Printf("x /= y = %d\n\n", x)
+
+	x, y = 210, 20
+	x %= y
+	multiline = `
+// modulus and assign
+	x , y = 210, 20
+	x %= y
+`
+	fmt.Println(multiline)
+	fmt.Println("x " + " % " + "= y = " + strconv.Itoa(x))
 
 }
 
