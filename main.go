@@ -3,12 +3,15 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"rsc.io/quote"
 	"strconv"
 )
 
 const PI = 3.14
 
 func main() {
+
+	fmt.Println(quote.Go())
 
 	// Chapter 1
 	// dataTypesAndVariables()
@@ -27,6 +30,46 @@ func operatorsAndControlFlow() {
 	arithmeticOperators()
 	logicalOperators()
 	assignmentOperators()
+	bitwiseOperators()
+
+}
+
+func bitwiseOperators() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("bitwiseOperators\n")
+
+	fmt.Println("bitwise And (&) ")
+	var x, y int = 12, 25
+	z := x & y
+	fmt.Printf("z := x & y = %d\n\n", z)
+
+	fmt.Println("bitwise Or (|) ")
+	x, y = 12, 25
+	z = x | y
+	fmt.Printf("z = x | y = %d\n\n", z)
+
+	fmt.Println("bitwise XOR (^) ")
+	x, y = 12, 25
+	z = x ^ y
+	fmt.Printf("z = x ^ y = %d\n\n", z)
+
+	fmt.Println("Left Shift (<<) ")
+	x = 212
+	z = x << 1
+	fmt.Printf("z = x << 1 = %d\n\n", z)
+
+	fmt.Println("Right Shift (>>) ")
+	x = 212
+	z = x >> 2
+	fmt.Printf("z = x >> 2 = %d\n\n", z)
+
+	x, y = 100, 90
+	z = (x + y) >> 2
+	fmt.Printf("(x+y) >> 2)  %d\n\n", z)
+
+	x, y = 100, 90
+	b := !(((x + y) >> 2) == 47)
+	fmt.Printf("!(((x+y) >> 2 ) == 47  ", b)
 
 }
 
