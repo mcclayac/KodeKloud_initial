@@ -33,6 +33,79 @@ func operatorsAndControlFlow() {
 	bitwiseOperators()
 
 	// Control Flow
+	if_elseOperator()
+	loopControlOperator()
+
+}
+
+func loopControlOperator() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("Loop Control functions\n")
+
+}
+
+func if_elseOperator() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("if_elseOperator\n")
+
+	var a string = "happy"
+	if a == "happy" {
+		fmt.Println(a)
+	}
+
+	fmt.Printf("\n")
+
+	var fruit string = "grapes"
+	if fruit == "apples" {
+		fmt.Println("fruit is apple")
+	} else {
+		fmt.Println("Fruit is not apple")
+	}
+
+	fmt.Printf("\n")
+
+	fruit = "grapes"
+	if fruit == "apples" {
+		fmt.Println("I love apples")
+	} else if fruit == "oranges" {
+		fmt.Println("I love oranges")
+	} else {
+		fmt.Println("No appetite")
+	}
+
+	var i int = 800
+	switch i {
+	case 10:
+		fmt.Println("i is 10")
+	case 100, 200:
+		fmt.Println("i is either 100, 200")
+	default:
+		fmt.Println("i is neither 0,100 or 200")
+	}
+
+	i = 10
+	switch i {
+	case -5:
+		fmt.Println("-5")
+	case 10:
+		fmt.Println("10")
+		fallthrough
+	case 20:
+		fmt.Println("20")
+		fallthrough
+	default:
+		fmt.Println("default")
+	}
+
+	var c, d int = 10, 20
+	switch {
+	case c+d == 30:
+		fmt.Println("equal to 30")
+	case c+d <= 30:
+		fmt.Println("less than or equal to 30")
+	default:
+		fmt.Println("greater than 30")
+	}
 
 }
 
