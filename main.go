@@ -42,6 +42,21 @@ func loopControlOperator() {
 	fmt.Println("\n----------------------------------------")
 	fmt.Println("Loop Control functions\n")
 
+	for i := 1; i <= 3; i++ {
+		fmt.Println("Hello World")
+	}
+
+	for i := 1; i <= 5; i++ {
+		fmt.Println(i * i)
+	}
+
+	fmt.Println("-------------")
+	var i int = 1
+	for i <= 5 {
+		fmt.Println(i * i)
+		i++
+	}
+
 }
 
 func if_elseOperator() {
