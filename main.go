@@ -8,7 +8,17 @@ import (
 
 const PI = 3.14
 
+var (
+	cube = func(i int) string {
+		c := i * i * i
+		return strconv.Itoa(c)
+	}
+)
+
 func main() {
+
+	//x := cube(8)
+	//fmt.Printf("%T %v", x, x)
 
 	// fmt.Println(quote.Go())
 
@@ -19,10 +29,20 @@ func main() {
 	// operatorsAndControlFlow()
 
 	// Chapter 3
-	arraysAndSlices()
+	//arraysAndSlices()
 
 	// Chapter 4
 	functions()
+
+	// Chapter 5
+	pointers()
+
+}
+
+func pointers() {
+	fmt.Println("--------------------------------")
+	fmt.Println("Chapter 5")
+	fmt.Println("pointers\n\n")
 
 }
 
@@ -36,12 +56,109 @@ func functions() {
 	variadicFunction()
 	recursiveFunctions()
 	anonymousFunctions()
+	// highOrderFunctions()
+	DeferStatement()
 
+}
+
+func DeferStatement() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("DeferStatement \n")
+
+	printName("Joe")
+	defer printRollNo(123)
+	printAddress("16315 Lawndale")
+
+}
+
+func printName(str string) {
+	fmt.Println(str)
+}
+
+func printRollNo(rno int) {
+	fmt.Println(rno)
+}
+
+func printAddress(adr string) {
+	fmt.Println(adr)
+}
+
+func highOrderFunctions() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("highOrderFunctions \n")
+
+	var query int
+	var radius float64
+	fmt.Println("High Order Function case 1")
+	fmt.Println("Enter the raidus of the circle:")
+	fmt.Scanf("%f", &radius)
+	fmt.Printf("Enter \n 1 - area \n 2 - perimeter \n 3 - diameter \n enter:")
+	fmt.Scanf("%d", &query)
+
+	if query == 1 {
+		fmt.Println("Result:", calcArea(radius))
+	} else if query == 2 {
+		fmt.Println("Result:", calcPerimeter(radius))
+	} else if query == 3 {
+		fmt.Println("Result:", calcDiameter(radius))
+	} else {
+		fmt.Println("Error")
+	}
+
+	fmt.Println("High Order Function case 2")
+	fmt.Println("High Order Function case 2")
+	fmt.Println("Enter the raidus of the circle:")
+	fmt.Scanf("%f", &radius)
+	fmt.Printf("Enter \n 1 - area \n 2 - perimeter \n 3 - diameter \n enter:")
+	fmt.Scanf("%d", &query)
+
+	printResult(radius, getFunction(query))
+
+}
+
+func printResult(radius float64, calcFunction func(r float64) float64) {
+	result := calcFunction(radius)
+	fmt.Println("result :", result)
+	fmt.Println("Thank you!")
+}
+
+func getFunction(query int) func(r float64) float64 {
+
+	query_to_func := map[int]func(r float64) float64{
+		1: calcArea,
+		2: calcPerimeter,
+		3: calcDiameter,
+	}
+	return query_to_func[query]
+}
+
+func calcArea(r float64) float64 {
+	return 3.14 * r * r
+}
+func calcPerimeter(r float64) float64 {
+	return 2 * 3.14 * r
+}
+func calcDiameter(r float64) float64 {
+	return 2 * r
 }
 
 func anonymousFunctions() {
 	fmt.Println("\n----------------------------------------")
 	fmt.Println("anonymousFunctions \n")
+
+	x := func(l int, b int) int {
+		return l * b
+	}
+	fmt.Printf("%T \n", x)
+	fmt.Println(x(20, 10))
+	fmt.Printf("\n\n")
+
+	y := func(l int, b int) int {
+		return l * b
+	}(20, 30)
+
+	fmt.Printf("%T \n", y)
+	fmt.Println(y)
 
 }
 
