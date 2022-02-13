@@ -33,7 +33,32 @@ func functions() {
 
 	basicFunction()
 	multiplereturnTypes()
+	variadicFunction()
 
+}
+
+func variadicFunction() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("variadicFunction \n")
+
+	var sum int = 0
+	sum = addNumbers(1, 2, 3, 4)
+	fmt.Printf("%d , %d, %d, %d = %d\n", 1, 2, 3, 4, sum)
+
+	fmt.Println("addNumbers() = ", addNumbers())
+	fmt.Println("addNumbers(10) = ", addNumbers(10))
+	fmt.Println("addNumbers(10,20) = ", addNumbers(10, 20))
+	fmt.Println("addNumbers(10,20,30) = ", addNumbers(10, 20, 30))
+
+}
+
+func addNumbers(numbers ...int) int {
+
+	var sum int = 0
+	for _, value := range numbers {
+		sum += value
+	}
+	return sum
 }
 
 func multiplereturnTypes() {
