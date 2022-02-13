@@ -21,6 +21,33 @@ func main() {
 	// Chapter 3
 	arraysAndSlices()
 
+	// Chapter 4
+	functions()
+
+}
+
+func functions() {
+	fmt.Println("--------------------------------")
+	fmt.Println("Chapter 4")
+	fmt.Println("Functions\n\n")
+
+	basicFunction()
+
+}
+
+func basicFunction() {
+
+	var val1, val2 int = 6, 9
+	sum := addTwo(val1, val2)
+	fmt.Printf("%d + %d = %d\n\n", val1, val2, sum)
+
+}
+
+func addTwo(value1 int, value2 int) int {
+
+	var sum int
+	sum = value1 + value2
+	return sum
 }
 
 func arraysAndSlices() {
