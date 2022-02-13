@@ -32,7 +32,7 @@ func main() {
 	//arraysAndSlices()
 
 	// Chapter 4
-	functions()
+	// functions()
 
 	// Chapter 5
 	pointers()
@@ -43,6 +43,17 @@ func pointers() {
 	fmt.Println("--------------------------------")
 	fmt.Println("Chapter 5")
 	fmt.Println("pointers\n\n")
+
+	addressAndDereferenceOperator()
+
+}
+
+func addressAndDereferenceOperator() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("addressAndDereferenceOperator \n")
+
+	x := 77
+	fmt.Printf("%T, %v \n", &x, &x)
 
 }
 
