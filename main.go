@@ -32,7 +32,40 @@ func functions() {
 	fmt.Println("Functions\n\n")
 
 	basicFunction()
+	multiplereturnTypes()
 
+}
+
+func multiplereturnTypes() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("multiplereturnTypes \n")
+
+	var val1, val2 int = 8, 9
+	addition, substraction := operatios(val1, val2)
+	fmt.Printf("%d + %d = %d\n", val1, val2, addition)
+	fmt.Printf("%d - %d = %d\n\n", val1, val2, substraction)
+
+	val1, val2 = 10, 20
+	addition, substraction = operatios2(val1, val2)
+	fmt.Printf("%d + %d = %d\n", val1, val2, addition)
+	fmt.Printf("%d - %d = %d\n\n", val1, val2, substraction)
+
+}
+
+func operatios2(val1 int, val2 int) (add int, sub int) {
+
+	// return values with named return-type arguement
+	add = val1 + val2
+	sub = val1 - val2
+	return add, sub
+}
+
+func operatios(val1 int, val2 int) (int, int) {
+
+	var add, sub int
+	add = val1 + val2
+	sub = val1 - val2
+	return add, sub
 }
 
 func basicFunction() {
