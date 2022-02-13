@@ -34,7 +34,32 @@ func functions() {
 	basicFunction()
 	multiplereturnTypes()
 	variadicFunction()
+	recursiveFunctions()
+	anonymousFunctions()
 
+}
+
+func anonymousFunctions() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("anonymousFunctions \n")
+
+}
+
+func recursiveFunctions() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("variadicFunction \n")
+
+	fmt.Println("factorial(5) = ", factorial(5))
+
+}
+
+func factorial(n int) int {
+
+	if n == 1 {
+		return 1
+	} else {
+		return n * factorial(n-1)
+	}
 }
 
 func variadicFunction() {
