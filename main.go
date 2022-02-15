@@ -45,6 +45,48 @@ func pointers() {
 	fmt.Println("pointers\n\n")
 
 	addressAndDereferenceOperator()
+	declaringAPointer()
+	initializingAPointer()
+	dereferencingAPointer()
+
+}
+
+func dereferencingAPointer() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("dereferencingAPointer \n")
+
+	s := "Hello"
+	fmt.Printf("%T %v \n", s, s)
+	ps := &s
+	*ps = "world"
+	fmt.Printf("%T %v \n", s, s)
+
+}
+
+func initializingAPointer() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("initializingAPointer \n")
+
+	s := "Hello"
+	var b *string = &s
+	fmt.Println(b)
+	var a *string = &s
+	fmt.Println(a)
+	var c *string = &s
+	fmt.Println(c)
+
+	fmt.Println(*b)
+
+}
+
+func declaringAPointer() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("declaringAPointer \n")
+
+	var i *int
+	var p *string
+	fmt.Println(i)
+	fmt.Println(p)
 
 }
 
@@ -54,6 +96,7 @@ func addressAndDereferenceOperator() {
 
 	x := 77
 	fmt.Printf("%T, %v \n", &x, &x)
+	fmt.Printf("%T, %v \n", *(&x), *(&x))
 
 }
 
