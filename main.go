@@ -35,8 +35,142 @@ func main() {
 	// functions()
 
 	// Chapter 5
-	pointers()
+	//pointers()
 
+	// Chapter 6
+	structsMethodsInterfaces()
+
+}
+
+func structsMethodsInterfaces() {
+	fmt.Println("--------------------------------")
+	fmt.Println("Chapter 6")
+	fmt.Println("structsMethodsInterfaces\n\n")
+
+	declaringAndInitializingStruct()
+	accessingFieldsStructs()
+	passingStructsToFunctions()
+	comparingStructs()
+
+}
+
+func comparingStructs() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("Comparring Structs \n")
+
+	//c1 := s1{5}
+	//c2 := s2{5}
+
+	// compile-type error
+	//if c1 == c2 {
+	//	fmt.Println("yes")
+	//} else {
+	//	fmt.Println("no")
+	//}
+
+	c1 := s1{5}
+	c2 := s1{6}
+	c3 := s1{5}
+
+	if c1 != c2 {
+		fmt.Println("c1 and c2 have different values")
+	}
+
+	if c1 == c3 {
+		fmt.Println("c is same as c2")
+	}
+
+}
+
+type s1 struct {
+	x int
+}
+
+type s2 struct {
+	x int
+}
+
+func passingStructsToFunctions() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("Passng Structs to Function \n")
+
+	d := Circle2{5, 5, 5, 0, 0}
+	fmt.Printf("%+v\n", d)
+	calcAreaStruct(&d)
+	fmt.Printf("%+v\n", d)
+
+}
+
+func calcAreaStruct(c *Circle2) {
+	const PI float64 = 3.14
+	var area float64
+	area = (PI * c.radius * c.radius)
+	(*c).area = area
+	// or
+	c.area2 = area + 10
+}
+
+func accessingFieldsStructs() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("Accessing a struct field \n")
+
+	var c Circle
+	c.x = 5
+	c.y = 5
+	c.radius = 5
+
+	fmt.Printf("%+v\n", c)
+
+}
+
+type Circle struct {
+	x      float64
+	y      float64
+	radius float64
+}
+
+type Circle2 struct {
+	x      int
+	y      int
+	radius float64
+	area   float64
+	area2  float64
+}
+
+type Student struct {
+	name   string
+	rollNo int
+	marks  []int
+	grades map[string]int
+}
+
+type Student2 struct {
+	name   string
+	rollNo int
+}
+
+func declaringAndInitializingStruct() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("Declaring and Initoa==ilaizing a Struct \n")
+
+	// Initial ver 1
+	var s Student
+	fmt.Printf("%+v\n", s)
+
+	// Initial ver 2
+	t := new(Student)
+	fmt.Printf("%+v\n", t)
+
+	// Initial ver 3
+	u := Student{
+		name:   "Joe",
+		rollNo: 12,
+	}
+	fmt.Printf("%+v\n", u)
+
+	// Initial ver 3
+	v := Student2{"Tony", 32}
+	fmt.Printf("%+v\n", v)
 }
 
 func pointers() {
