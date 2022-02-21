@@ -48,7 +48,63 @@ func pointers() {
 	declaringAPointer()
 	initializingAPointer()
 	dereferencingAPointer()
+	passingByValue()
+	passByReference()
 
+}
+
+func passByReference() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("passByReference \n")
+	a := "hello"
+	fmt.Println(a)
+	modifyRef(&a)
+	fmt.Println(a)
+
+	slice := []int{10, 20, 30}
+	fmt.Println(slice)
+	modifySlice(slice)
+	fmt.Println(slice)
+
+	ascii_code := make(map[string]int)
+	ascii_code["A"] = 65
+	ascii_code["F"] = 70
+	fmt.Println(ascii_code)
+	modifyMap(ascii_code)
+	fmt.Println(ascii_code)
+}
+
+func modifyMap(code map[string]int) {
+
+	code["K"] = 75
+}
+
+func modifySlice(slice []int) {
+
+	slice[0] = 100
+
+}
+
+func modifyRef(s *string) {
+
+	*s = "World!"
+
+}
+
+func passingByValue() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("passingByValue \n")
+
+	a := "hello"
+	fmt.Println(a)
+	modify(a)
+	fmt.Println(a)
+
+}
+
+func modify(s string) {
+
+	s = "world!"
 }
 
 func dereferencingAPointer() {
