@@ -52,6 +52,57 @@ func structsMethodsInterfaces() {
 	passingStructsToFunctions()
 	comparingStructs()
 
+	methods()
+	methodSets()
+
+}
+
+func methodSets() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("methodSets \n")
+
+	s := StudentMethodSets{name: "Joe", grades: []int{90, 75, 80}}
+	s.displayname()
+	fmt.Printf("%.2f%%", s.calculattePercentage())
+
+}
+
+type StudentMethodSets struct {
+	name   string
+	grades []int
+}
+
+func (s *StudentMethodSets) displayname() {
+	fmt.Println(s.name)
+}
+
+func (s *StudentMethodSets) calculattePercentage() float64 {
+	sum := 0
+	for _, v := range s.grades {
+		sum += v
+	}
+	return float64(sum*100) / float64(len(s.grades)*100)
+}
+
+func methods() {
+	fmt.Println("\n----------------------------------------")
+	fmt.Println("Methods \n")
+
+	cir := CircleMethod{radius: 5}
+
+	// Call Method
+	cir.calcArea()
+	fmt.Printf("%+v\n", cir)
+}
+
+type CircleMethod struct {
+	radius float64
+	area   float64
+}
+
+// method
+func (c *CircleMethod) calcArea() {
+	c.area = 3.14 * c.radius * c.radius
 }
 
 func comparingStructs() {
